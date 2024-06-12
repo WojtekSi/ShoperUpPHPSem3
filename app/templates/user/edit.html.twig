@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="{{ path('users') }}">Powrót</a>
+    <h1>Edytowanie użytkownika</h1>
+
+    <form method="post">
+        <input type="text" name="name" value="{{ user.name }}">
+        <input type="submit">
+    </form>
+{% endblock %}

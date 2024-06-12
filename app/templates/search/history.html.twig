@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="{{ path('mainpage') }}">powrot do strony glownej</a>
+    <h1>Historia wyszukiwania </h1>
+
+    {% for result in history %}
+        <li>ID: {{ result.id }} - nazwa lokalizacji: {{ result.location }} - dystans: {{ result.distance }}</li>
+    {% endfor %}
+{% endblock %}

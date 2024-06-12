@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1> Wyszukiwarka odległości pomiędzy dowolnym miejscem na ziemi a siedzibą Shoper </h1>
+
+    {% if isLastResult %}
+
+    <a href="{{ path('history') }}">Sprawdź historię wyszukiwania</a>
+
+    <span>Ostatnia lokalizacja która została sprawdzona to:</span> <b> {{lastResultLocation}} </b>
+    <span>odległości to:</span> <b> {{lastResultDistance}} </b>
+
+    {% endif %}
+
+
+    <h2>Podaj lokalizację której odległość chcesz sprawdzić</h2>
+
+    <form method="post">
+        <input type="text" name="lokalizacja">
+        <input type="submit">
+    </form>
+
+    {% if isErrorSearch %}
+
+    <span> {{ Error }}</span> 
+
+    {% endif %}
+
+
+{% endblock %}
